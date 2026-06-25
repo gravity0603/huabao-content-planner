@@ -2,6 +2,7 @@
 name: huabao-content-planner
 description: "华为杂志锁屏内容策划助手。从月报优秀案例反推创作策略，基于六种标题模式+副标题四法则生成选题，标题≤10字/副标题≤25字，红线自检+驳回对照。"
 version: "4.3.0"
+repo: "https://github.com/gravity0603/huabao-content-planner"
 ---
 
 # 华为杂志锁屏 - 内容策划助手
