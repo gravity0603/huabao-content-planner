@@ -1,7 +1,7 @@
 ---
 name: huabao-content-planner
 description: "华为杂志锁屏内容策划、审核与知识库更新助手。只要用户提到华为画报、杂志锁屏选题、标题/副标题/落地页、内容红线、月报或周数据分析、已做标题去重、素材库出题，即使没有显式调用本 Skill，也要使用本 Skill。每次策划都从最新可用数据和外部素材出发，完成来源核验、概念级去重、P 潜力与月报潜力双目标评分后再输出。"
-version: "6.0.1"
+version: "6.0.2"
 group: 内容创作
 repo: "https://github.com/gravity0603/huabao-content-planner"
 ---
@@ -155,4 +155,4 @@ repo: "https://github.com/gravity0603/huabao-content-planner"
 
 ## 版本与维护
 
-当前版本：`v6.0.1`。本版本增加素材库链接的最近添加优先读取规则。业务规则以参考文件为准。变更时遵守：编辑根 `SKILL.md` 后同步版本和 `README.md`，知识内容只改 `references/knowledge-base.md`，专题只改对应专题文件；提交前检查仓库内不存在重复的 `SKILL.md`、知识库或 standalone prompt。
+当前版本：`v6.0.2`。本版本新增影视「女星角色亮点」子方向方法论（角色身份标签 + 认知反差，锁屏标题不写女星人名），详见专题文件 3.3。业务规则以参考文件为准。变更时遵守：编辑根 `SKILL.md` 后同步版本和 `README.md`，知识内容只改 `references/knowledge-base.md`，专题只改对应专题文件；提交前检查仓库内不存在重复的 `SKILL.md`、知识库或 standalone prompt。
