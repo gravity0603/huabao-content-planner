@@ -1,10 +1,10 @@
 # 华为画报内容策划助手
 
-[![Version](https://img.shields.io/badge/version-v6.0.2-2f6f6d.svg)](CHANGELOG.md) [![Structure](https://img.shields.io/badge/structure-single--source-2f6f6d.svg)](SKILL.md)
+[![Version](https://img.shields.io/badge/version-v6.1.0-2f6f6d.svg)](CHANGELOG.md) [![Structure](https://img.shields.io/badge/structure-single--source-2f6f6d.svg)](SKILL.md)
 
 > 面向华为杂志锁屏运营的内容策划 Skill：从最新素材和数据出发，完成选题、来源核验、概念去重、双目标评分和出街前审核。
 
-当前版本：**v6.0.2**（2026-08-18）
+当前版本：**v6.1.0**（2026-08-30）
 
 ## 能力总览
 
@@ -14,7 +14,7 @@
 | 内容审核 | 标题、锁屏文案、落地页或图片 Brief | 通过/不通过/需补证、命中规则和修改建议 |
 | 数据与知识库更新 | 周数据、月报、审核反馈 | 更新后的规则、品类方法和版本记录 |
 
-**核心流程**：最近新增素材优先 → 原文验证 → 概念级去重 → P/月报双目标评分 → 内容包输出。
+**核心流程**：月报参考风格对齐 → 最近新增素材优先 → 原文验证 → H/R/B 跨会话概念去重 → 自然表达复核 → P/月报双目标评分 → 内容包输出。
 
 ## 本次结构调整
 
@@ -38,6 +38,7 @@ huabao-content-planner/
 │   └── source-accounts.csv
 └── references/
     ├── knowledge-base.md
+    ├── selection-governance.md
     └── star-movie-anime-methodology.md
 ```
 
@@ -60,7 +61,8 @@ skills/huabao-content-planner/SKILL.md
 - `SKILL.md`
 - `references/knowledge-base.md`
 - `references/star-movie-anime-methodology.md`（处理对应品类时）
-- 用户当前的素材库和已做标题表
+- `references/selection-governance.md`
+- 用户当前的素材库、已做标题表和上传标题表
 
 仓库不再维护一份容易过期的 standalone prompt。若目标工具不能读取参考文件，应先将需要的章节按任务临时合并，不要把合并结果提交回仓库。
 
@@ -82,6 +84,7 @@ skills/huabao-content-planner/SKILL.md
 - `D:\yiyouliao working\工作内容\每周数据`
 - `D:\yiyouliao working\工作内容\参考文件\华为画报月报`
 - 用户在当前会话提供的素材库、已做标题和上传标题表
+- `D:\yiyouliao working\选题参考\` 下对应品类的月报参考表
 
 ## 维护规则
 
@@ -94,10 +97,11 @@ skills/huabao-content-planner/SKILL.md
 
 ## 质量底线
 
-- 标题硬上限 10 字，副标题硬上限 25 字；性能目标通常为 7-9 字，具体按品类数据调整。
+- 月报参考表约束标题—副标题的节奏、信息密度与品类语气；旧样例不直接照抄。
+- 字数是出街边界而非生成目标：先保证自然、完整，再计数；无法自然合规时换切口，不截尾硬压。
 - 每个成品选题必须有可点击的信息源链接；搜索摘要不能标记为已验证。
-- 先做概念级去重，再做标题生成；标题不同不代表选题不同。
-- 素材库检索按链接添加时间倒序优先；没有明确日期字段时，按文件后出现的记录近似判断新增顺序，不伪造精确时间。
+- 新选题必须完成 H（全历史）、R（目标日前至少30天上传记录）、B（本批/本会话）去重；数据过期或缺失时只能交付草案。
+- 用户当次给定的素材时间范围覆盖默认时效；去重窗口独立计算。
 
 ## 版本历史
 
