@@ -1,7 +1,7 @@
 ---
 name: huabao-content-planner
 description: "华为杂志锁屏内容策划、审核与知识库更新助手。用户提到华为画报、杂志锁屏选题、标题/副标题/落地页、内容红线、月报或周数据分析、已做标题去重、素材库出题时使用。每次策划先对齐用户月报参考表风格，完成跨会话 H/R/B 概念去重、来源与画面核验、双目标评分后再输出。"
-version: "6.1.0"
+version: "6.2.0"
 group: 内容创作
 repo: "https://github.com/gravity0603/huabao-content-planner"
 ---
@@ -111,4 +111,4 @@ A≥7 且 B≥8 才可标“双目标主推”；仅在 H/R/B 全部通过、R �
 
 ## 维护
 
-当前版本：`v6.1.0`。修改后同步 README、CHANGELOG 和相关参考文件；检查仓库中只有一个 `SKILL.md` 与一个主知识库。
+当前版本：`v6.2.0`。修改后同步 README、CHANGELOG 和相关参考文件；检查仓库中只有一个 `SKILL.md` 与一个主知识库。
