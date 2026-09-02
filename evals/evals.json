@@ -1,0 +1,69 @@
+{
+  "skill_name": "huabao-content-planner",
+  "evals": [
+    {
+      "id": 1,
+      "name": "route-before-generate",
+      "prompt": "素材讲一座古桥的榫卯工艺演变，地点只是背景，请按旅行风光出题。",
+      "expected_output": "按核心对象和用户收益路由艺术，不强行生成旅行正式候选。",
+      "files": [],
+      "expectations": ["路由艺术", "不输出旅行正式候选"]
+    },
+    {
+      "id": 2,
+      "name": "certainty-protection",
+      "prompt": "研究只说某现象可能与气候有关，请写成‘科学家证实真相’。",
+      "expected_output": "拒绝升级确定性，保留‘可能/研究推测’；来源不直接支持题眼时进入待验证。",
+      "files": [],
+      "expectations": ["不写证实或真相", "确定性一致"]
+    },
+    {
+      "id": 3,
+      "name": "r-window-continuity",
+      "prompt": "目标上线日为9月30日，去重窗口为9月1日至9月30日，R表只含9月15日至9月25日，其他均通过。",
+      "expected_output": "判R覆盖不足，不得标可上架、可用或主推，并给出覆盖起止与数据截止日。",
+      "files": [],
+      "expectations": ["检查窗口起点和终点", "降级"]
+    },
+    {
+      "id": 4,
+      "name": "visual-hard-gate",
+      "prompt": "来源可靠但首图只是氛围图，内页只有两种画面；质量预估90。",
+      "expected_output": "画面硬门槛失败，高分无效；换图、补图、换切口或淘汰。",
+      "files": [],
+      "expectations": ["首图证明", "至少3种内页", "高分不抵消硬门槛"]
+    },
+    {
+      "id": 5,
+      "name": "one-hook-subtitle",
+      "prompt": "标题写视觉反常，副标题再加入健康风险、全球排名和购买建议。",
+      "expected_output": "判双钩和风险失败；只留一个主钩子，副标题只补证据与答案方向，其他拆题或删除。",
+      "files": [],
+      "expectations": ["一题一钩", "副标题最多两层", "去品牌或购买建议"]
+    },
+    {
+      "id": 6,
+      "name": "title-only-draft",
+      "prompt": "没有来源、首图和H/R/B，只把已有标题改得更吸睛。",
+      "expected_output": "可做三结构文字优化并唯一推荐，但必须标不可直接上架，不报100分、不标主推；无题眼时返回应换题。",
+      "files": [],
+      "expectations": ["不伪造上游回执", "不报总分", "应换题机制"]
+    },
+    {
+      "id": 7,
+      "name": "status-and-business-score",
+      "prompt": "候选硬门槛和H/R/B都通过，质量88，P为6，月报为9。",
+      "expected_output": "不得标主推；可标可用并将业务定位写成非双目标主推，同时说明P不足。",
+      "files": [],
+      "expectations": ["主推需质量>=85且P>=7且月报>=8", "质量状态与业务定位分开"]
+    },
+    {
+      "id": 8,
+      "name": "retired-formula-rejection",
+      "prompt": "请直接套用旧知识库公式，副标题写‘不敢信！最后一张答案太震撼’。",
+      "expected_output": "拒绝停用公式；按当前标题—副标题分工重写，若无证据和收益则应换题。",
+      "files": [],
+      "expectations": ["旧公式不可执行", "不使用进度绑架或空情绪"]
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 # 华为画报内容策划助手
 
-[![Version](https://img.shields.io/badge/version-v6.2.1-2f6f6d.svg)](CHANGELOG.md) [![Structure](https://img.shields.io/badge/structure-single--source-2f6f6d.svg)](SKILL.md)
+[![Version](https://img.shields.io/badge/version-v6.3.0-2f6f6d.svg)](CHANGELOG.md) [![Structure](https://img.shields.io/badge/structure-single--source-2f6f6d.svg)](SKILL.md)
 
 > 面向华为杂志锁屏运营的内容策划 Skill：从最新素材和数据出发，完成选题、来源核验、概念去重、双目标评分和出街前审核。
 
-当前版本：**v6.2.1**（2026-09-02）
+当前版本：**v6.3.0**（2026-09-03）
 
 ## 能力总览
 
@@ -14,7 +14,7 @@
 | 内容审核 | 标题、锁屏文案、落地页或图片 Brief | 通过/不通过/需补证、命中规则和修改建议 |
 | 数据与知识库更新 | 周数据、月报、审核反馈 | 更新后的规则、品类方法和版本记录 |
 
-**核心流程**：月报参考风格对齐 → 最近新增素材优先 → 原文验证 → H/R/B 跨会话概念去重 → 自然表达复核 → P/月报双目标评分 → 内容包输出。
+**核心流程**：品类路由与原子候选卡 → 月报参考风格对齐 → 原文与确定性验证 → H/R/B 跨会话概念去重 → 三结构标题比较 → 12项硬门槛 → 100分质量评分 + P/月报双目标评分 → 内容包输出。
 
 ## 本次结构调整
 
@@ -36,13 +36,16 @@ huabao-content-planner/
 ├── CHANGELOG.md
 ├── assets/
 │   └── source-accounts.csv
+├── evals/
+│   └── evals.json
 └── references/
     ├── knowledge-base.md
+    ├── category-style-playbook.md
     ├── selection-governance.md
     └── star-movie-anime-methodology.md
 ```
 
-`SKILL.md` 控制任务路由和执行顺序；参考文件按场景读取。不要把完整知识库再次复制到其他目录。
+`SKILL.md` 控制任务路由和执行顺序；参考文件按场景读取，`evals/evals.json`覆盖路由、确定性、R窗口、画面、单钩、标题草案与评分状态。不要把完整知识库再次复制到其他目录。
 
 ## 安装
 
@@ -60,6 +63,7 @@ skills/huabao-content-planner/SKILL.md
 
 - `SKILL.md`
 - `references/knowledge-base.md`
+- `references/category-style-playbook.md`（读取目标品类章节）
 - `references/star-movie-anime-methodology.md`（处理对应品类时）
 - `references/selection-governance.md`
 - 用户当前的素材库、已做标题表和上传标题表
@@ -88,11 +92,11 @@ skills/huabao-content-planner/SKILL.md
 
 ## 维护规则
 
-1. 规则和数据只写入 `references/knowledge-base.md` 的对应章节。
-2. 明星/影视/动漫的独立数据专题写入 `references/star-movie-anime-methodology.md`。
-3. 运行流程、触发条件和输出契约只写入根 `SKILL.md`。
-4. 安装、目录和版本说明只写入 `README.md`；历史变更写入 `CHANGELOG.md`。
-5. 修改根 `SKILL.md` 时同步更新版本号和 README；提交前检查仓库内只有一个 `SKILL.md` 和一个主知识库。
+1. 后台数据、技术规格、红线和运营证据写入 `references/knowledge-base.md` 的对应章节。
+2. 十品类参考风格写入 `references/category-style-playbook.md`；跨 Skill 输入、路由、确定性、去重、评分与输出契约写入 `references/selection-governance.md`。
+3. 明星/影视/动漫的独立数据专题写入 `references/star-movie-anime-methodology.md`。
+4. 运行流程与触发条件写入根 `SKILL.md`；安装、目录和版本说明写入 `README.md`；历史变更写入 `CHANGELOG.md`。
+5. 修改根 `SKILL.md` 时同步更新版本号和 README；提交前检查仓库内只有一个 `SKILL.md` 与一个主知识库。
 6. 不创建 `skills/`、`workspace-files/` 或 `package/` 下的镜像副本。
 
 ## 质量底线
@@ -101,8 +105,11 @@ skills/huabao-content-planner/SKILL.md
 - 字数是出街边界而非生成目标：先保证自然、完整，再计数；无法自然合规时换切口，不截尾硬压。
 - 标题必须有真实的反差或悬念：不能只把显而易见的事实改成问句，不能用孤立词组或空泛形容词凑短标题；交付前必须朗读复核。
 - 每个成品选题必须有可点击的信息源链接；搜索摘要不能标记为已验证。
-- 新选题必须完成 H（全历史）、R（目标日前至少30天上传记录）、B（本批/本会话）去重；数据过期或缺失时只能交付草案。
+- 新选题必须完成 H（全历史）、R（连续覆盖目标日前至少30天）、B（本批/本会话）去重，并记录R覆盖起止与数据截止日；覆盖不完整时只能交付草案。
 - 用户当次给定的素材时间范围覆盖默认时效；去重窗口独立计算。
+- 最终候选先过12项硬门槛，再做100分质量评分；主推质量须≥85分，且不能替代 P/月报双目标门槛。
+- 标题优化锁定事实、画面、确定性和用户收益；无题眼时返回“应换题”，不靠夸张文案硬救。
+- 知识库旧副标题公式1—12仅保留历史来源说明，已停止作为生成模板。
 
 ## 版本历史
 
