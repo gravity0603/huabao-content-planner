@@ -1,10 +1,10 @@
 # 华为画报内容策划助手
 
-[![Version](https://img.shields.io/badge/version-v6.2.0-2f6f6d.svg)](CHANGELOG.md) [![Structure](https://img.shields.io/badge/structure-single--source-2f6f6d.svg)](SKILL.md)
+[![Version](https://img.shields.io/badge/version-v6.2.1-2f6f6d.svg)](CHANGELOG.md) [![Structure](https://img.shields.io/badge/structure-single--source-2f6f6d.svg)](SKILL.md)
 
 > 面向华为杂志锁屏运营的内容策划 Skill：从最新素材和数据出发，完成选题、来源核验、概念去重、双目标评分和出街前审核。
 
-当前版本：**v6.2.0**（2026-08-30）
+当前版本：**v6.2.1**（2026-09-02）
 
 ## 能力总览
 
@@ -99,6 +99,7 @@ skills/huabao-content-planner/SKILL.md
 
 - 月报参考表约束标题—副标题的节奏、信息密度与品类语气；旧样例不直接照抄。
 - 字数是出街边界而非生成目标：先保证自然、完整，再计数；无法自然合规时换切口，不截尾硬压。
+- 标题必须有真实的反差或悬念：不能只把显而易见的事实改成问句，不能用孤立词组或空泛形容词凑短标题；交付前必须朗读复核。
 - 每个成品选题必须有可点击的信息源链接；搜索摘要不能标记为已验证。
 - 新选题必须完成 H（全历史）、R（目标日前至少30天上传记录）、B（本批/本会话）去重；数据过期或缺失时只能交付草案。
 - 用户当次给定的素材时间范围覆盖默认时效；去重窗口独立计算。
