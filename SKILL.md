@@ -130,4 +130,4 @@ repo: "https://github.com/gravity0603/huabao-content-planner"
 
 ## 维护
 
-当前版本：`v6.3.0`。修改后同步 README、CHANGELOG 和相关参考文件；检查仓库中只有一个 `SKILL.md` 与一个主知识库。
+当前版本：`v6.3.1`。修改后同步 README、CHANGELOG 和相关参考文件；检查仓库中只有一个 `SKILL.md` 与一个主知识库。

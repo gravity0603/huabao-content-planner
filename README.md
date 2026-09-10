@@ -1,10 +1,10 @@
 # 华为画报内容策划助手
 
-[![Version](https://img.shields.io/badge/version-v6.3.0-2f6f6d.svg)](CHANGELOG.md) [![Structure](https://img.shields.io/badge/structure-single--source-2f6f6d.svg)](SKILL.md)
+[![Version](https://img.shields.io/badge/version-v6.3.1-2f6f6d.svg)](CHANGELOG.md) [![Structure](https://img.shields.io/badge/structure-single--source-2f6f6d.svg)](SKILL.md)
 
 > 面向华为杂志锁屏运营的内容策划 Skill：从最新素材和数据出发，完成选题、来源核验、概念去重、双目标评分和出街前审核。
 
-当前版本：**v6.3.0**（2026-09-03）
+当前版本：**v6.3.1**（2026-09-10）
 
 ## 能力总览
 
