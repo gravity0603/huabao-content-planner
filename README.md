@@ -1,10 +1,10 @@
 # 华为画报内容策划助手
 
-[![Version](https://img.shields.io/badge/version-v6.3.8-2f6f6d.svg)](CHANGELOG.md) [![Structure](https://img.shields.io/badge/structure-single--source-2f6f6d.svg)](SKILL.md)
+[![Version](https://img.shields.io/badge/version-v6.3.9-2f6f6d.svg)](CHANGELOG.md) [![Structure](https://img.shields.io/badge/structure-single--source-2f6f6d.svg)](SKILL.md)
 
 > 面向华为杂志锁屏运营的内容策划 Skill：从最新素材和数据出发，完成选题、来源核验、概念去重、双目标评分和出街前审核。
 
-当前版本：**v6.3.8**（2026-09-14）
+当前版本：**v6.3.9**（2026-09-23）
 
 ## 能力总览
 
@@ -13,6 +13,7 @@
 | 批量选题 | 品类、数量、方向、最新素材 | 候选卡、标题、副标题、落地页、信息源、自检报告 |
 | 内容审核 | 标题、锁屏文案、落地页或图片 Brief | 通过/不通过/需补证、命中规则和修改建议 |
 | 数据与知识库更新 | 周数据、月报、审核反馈 | 更新后的规则、品类方法和版本记录 |
+| 月度新图组复盘 | 对应月度核心指标明细 | N 列标题队列、P 列详情页曝光排行、观察期与月报案例分层分析 |
 
 **核心流程**：品类路由与原子候选卡 → 月报参考风格对齐 → 原文与确定性验证 → H/R/B 跨会话概念去重 → 三结构标题比较 → 12项硬门槛 → 100分质量评分 + P/月报双目标评分 → 内容包输出。
 
@@ -25,6 +26,7 @@ v6.0.0/v6.0.1 将仓库改为单一真源结构，并补充最近新增素材优
 - 明星/影视/动漫专题放在 `references/star-movie-anime-methodology.md`
 - 随 Skill 分发的源账号样例放在 `assets/source-accounts.csv`
 - `README.md` 只负责安装和维护说明，不复制 Skill 正文
+- scripts/monthly_n_titles.py 只读提取 N/P 月度标题队列，避免误用 A-L 全量在库榜单
 - 删除旧的 `skills/`、`workspace-files/` 安装镜像和过期 standalone prompt
 
 ## 目录
